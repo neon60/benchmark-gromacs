@@ -36,14 +36,20 @@ def applyRule(ws, cell, compareCol):
 
 tests = [
     ('adh_dodec_stream_commands', 30000),
-    ('adh_dodec_mi100_commands', 30000),
-    ('adh_dodec_mi200_commands', 30000),
+    ('adh_mi100_commands', 30000),
+    ('adh_mi200_commands', 30000),
     ('stmv_stream_commands', 2000),
-    ('stmv_dodec_mi100_commands', 2000),
-    ('stmv_dodec_mi200_commands', 2000),
+    ('stmv_mi100_commands', 2000),
+    ('stmv_mi200_commands', 2000),
     ('celluloze_nve_stream_commands', 5000),
-    ('celluloze_nve_dodec_mi100_commands', 5000),
-    ('celluloze_nve_dodec_mi200_commands', 5000)
+    ('celluloze_nve_mi100_commands', 5000),
+    ('celluloze_nve_mi200_commands', 5000),
+    ('eag_stream_commands', 2000),
+    ('eag_mi100_commands', 2000),
+    ('eag_mi200_commands', 2000),
+    ('aqp_stream_commands', 5000),
+    ('aqp_mi100_commands', 5000),
+    ('aqp_mi200_commands', 5000)
 ]
 
 parser = argparse.ArgumentParser()

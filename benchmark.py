@@ -46,16 +46,28 @@ def runOneTest(testName, options):
         os.system(f'/usr/local/gromacs/bin/gmx mdrun -pin on -nsteps {steps} -resetstep 10000 -ntmpi 1 -ntomp 64 -notunepme -noconfout -nb gpu -bonded gpu -pme gpu -v -gpu_id 0 -s adh_dodec/topol.tpr')
     elif testName == 'stmv_stream_commands':
         os.system(f'/usr/local/gromacs/bin/gmx mdrun -pin on -nsteps {steps} -ntmpi 2 -ntomp 24 -notunepme -noconfout -nb gpu -bonded cpu -pme gpu -npme 1 -v -gpu_id 0 -s stmv/topol.tpr')
-    elif testName == 'stmv_dodec_mi100_commands':
+    elif testName == 'stmv_mi100_commands':
         os.system(f'/usr/local/gromacs/bin/gmx mdrun -pin on -nsteps {steps} -ntmpi 2 -ntomp 28 -notunepme -noconfout -nb gpu -bonded cpu -pme gpu -npme 1 -v -gpu_id 0 -s stmv/topol.tpr')
-    elif testName == 'stmv_dodec_mi200_commands':
+    elif testName == 'stmv_mi200_commands':
         os.system(f'/usr/local/gromacs/bin/gmx mdrun -pin on -nsteps {steps} -ntmpi 1 -ntomp 64 -notunepme -noconfout -nb gpu -bonded gpu -pme gpu -v -gpu_id 0 -s stmv/topol.tpr')
     elif testName == 'celluloze_nve_stream_commands':
         os.system(f'/usr/local/gromacs/bin/gmx mdrun -pin on -nsteps {steps} -ntmpi 2 -ntomp 28 -notunepme -noconfout -nb gpu -bonded cpu -pme gpu -npme 1 -v -gpu_id 0 -s cellulose_nve/topol.tpr')
-    elif testName == 'celluloze_nve_dodec_mi100_commands':
+    elif testName == 'celluloze_nve_mi100_commands':
         os.system(f'/usr/local/gromacs/bin/gmx mdrun -pin on -nsteps {steps} -ntmpi 2 -ntomp 28 -notunepme -noconfout -nb gpu -bonded cpu -pme gpu -npme 1 -v -gpu_id 0 -s cellulose_nve/topol.tpr')
-    elif testName == 'celluloze_nve_dodec_mi200_commands':
+    elif testName == 'celluloze_nve_mi200_commands':
         os.system(f'/usr/local/gromacs/bin/gmx mdrun -pin on -nsteps {steps} -ntmpi 1 -ntomp 64 -notunepme -noconfout -nb gpu -bonded gpu -pme gpu -v -gpu_id 0 -s cellulose_nve/topol.tpr')
+    elif testName == 'eag_stream_commands':
+        os.system(f'/usr/local/gromacs/bin/gmx mdrun -pin on -nsteps {steps} -ntmpi 2 -ntomp 24 -notunepme -noconfout -nb gpu -bonded cpu -pme gpu -npme 1 -v -gpu_id 0 -s eag1/topol.tpr')
+    elif testName == 'eag_mi100_commands':
+        os.system(f'/usr/local/gromacs/bin/gmx mdrun -pin on -nsteps {steps} -ntmpi 2 -ntomp 28 -notunepme -noconfout -nb gpu -bonded cpu -pme gpu -npme 1 -v -gpu_id 0 -s eag1/topol.tpr')
+    elif testName == 'eag_mi200_commands':
+        os.system(f'/usr/local/gromacs/bin/gmx mdrun -pin on -nsteps {steps} -ntmpi 1 -ntomp 64 -notunepme -noconfout -nb gpu -bonded gpu -pme gpu -v -gpu_id 0 -s eag1/topol.tpr')
+    elif testName == 'aqp_stream_commands':
+        os.system(f'/usr/local/gromacs/bin/gmx mdrun -pin on -nsteps {steps} -ntmpi 2 -ntomp 28 -notunepme -noconfout -nb gpu -bonded cpu -pme gpu -npme 1 -v -gpu_id 0 -s aqp_ensemble/topol.tpr')
+    elif testName == 'aqp_mi100_commands':
+        os.system(f'/usr/local/gromacs/bin/gmx mdrun -pin on -nsteps {steps} -ntmpi 2 -ntomp 28 -notunepme -noconfout -nb gpu -bonded cpu -pme gpu -npme 1 -v -gpu_id 0 -s aqp_ensemble/topol.tpr')
+    elif testName == 'aqp_mi200_commands':
+        os.system(f'/usr/local/gromacs/bin/gmx mdrun -pin on -nsteps {steps} -ntmpi 1 -ntomp 64 -notunepme -noconfout -nb gpu -bonded gpu -pme gpu -v -gpu_id 0 -s aqp_ensemble/topol.tpr')
     else:
         print('Unknown test')
         return 0
@@ -87,7 +99,7 @@ def printResults(results):
     for (test, r) in results:
         print(r)
     print()
-allTests = ['adh_dodec_stream_commands', 'adh_dodec_mi100_commands', 'adh_dodec_mi200_commands', 'stmv_stream_commands', 'stmv_dodec_mi100_commands', 'stmv_dodec_mi200_commands', 'celluloze_nve_stream_commands', 'celluloze_nve_dodec_mi100_commands', 'celluloze_nve_dodec_mi200_commands']
+allTests = ['adh_dodec_stream_commands', 'adh_dodec_mi100_commands', 'adh_dodec_mi200_commands', 'stmv_stream_commands', 'stmv_mi100_commands', 'stmv_mi200_commands', 'celluloze_nve_stream_commands', 'celluloze_nve_mi100_commands', 'celluloze_nve_mi200_commands', 'eag_stream_commands', 'eag_mi100_commands', 'eag_mi200_commands', 'aqp_stream_commands', 'aqp_mi100_commands', 'aqp_mi200_commands']
 # Parse the command line options.
 parser = ArgumentParser()
 # platformNames = [mm.Platform.getPlatform(i).getName() for i in range(mm.Platform.getNumPlatforms())]

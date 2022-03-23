@@ -85,8 +85,7 @@ run_tmpi_init(){
     cd $_CWD
     ./gromacs_tmpi_init.sh $out_dir
 }
-export GMX_GPU_DD_COMMS=1
-export GMX_GPU_PME_PP_COMMS=1
+export GMX_ENABLE_DIRECT_GPU_COMM=1
 export GMX_FORCE_UPDATE_DEFAULT_GPU=1
 export ROC_ACTIVE_WAIT_TIMEOUT=0
 export AMD_DIRECT_DISPATCH=0

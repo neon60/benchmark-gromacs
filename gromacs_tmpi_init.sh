@@ -24,3 +24,11 @@ tar zxf stmv.tar.gz
 cd ..
 cd cellulose_nve/
 tar zxf cellulose_nve.tar.gz
+
+cd ..
+cd eag1/
+gzip -d topol.tpr.gz
+
+cd ..
+cd aqp_ensemble/
+tar zxf aqp_ensemble.tar.gz

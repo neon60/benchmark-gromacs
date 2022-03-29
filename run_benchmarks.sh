@@ -88,7 +88,7 @@ run_tmpi_init(){
 export GMX_ENABLE_DIRECT_GPU_COMM=1
 export GMX_FORCE_UPDATE_DEFAULT_GPU=1
 export ROC_ACTIVE_WAIT_TIMEOUT=0
-export AMD_DIRECT_DISPATCH=0
+export AMD_DIRECT_DISPATCH=70
 
 if [[ $run_type == "mpi" ]]; then
      run_mpi
